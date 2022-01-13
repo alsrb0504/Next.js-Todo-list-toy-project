@@ -1,37 +1,48 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import {BsFillPencilFill, BsFillEraserFill } from "react-icons/bs";
 
 export default function Description({TodoList}) {
   const router = useRouter();
 
-  const [item, setItem] = useState({
-    id: 999,
-    contents: 'Not Found'
-  })
+  const [text, setText] = useState('Empty! error')
 
   useEffect(() => {
-    const currentId = Number(router.query.params[0]);
-    const findItem = TodoList.find(el => (el.id === currentId));
-
-    if(findItem !== undefined) {
-      setItem(findItem);
+    if(router && router.query.params) {
+      const passedId = Number(router.query.params);
+      const findItem = TodoList.find(el => (el.id === passedId));
+      setText(findItem.contents)
     }
-  }, [TodoList])
+  }, [router])
 
+  const handleChange = (e) => {
+    setText(e.target.value);
+  }
+
+  const moveBack = (e) => {
+    e.preventDefault();
+    router.push(`/list/${router.query.params}`)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // 나중에 새로 만들기는 page id = 0으로 설정.
+    const newItem = {
+      id: router.query.params,
+      contents: text,
+    }
+    // listItem 설정하는 방법 구현.
+  }
 
   return (
     <>
       <div className='container'>
-        <textarea>{item.contents}</textarea>
-        <div className='btns'>
-          <button>
-            <BsFillPencilFill />
-          </button>
-          <button>
-            <BsFillEraserFill />
-          </button>
-        </div>
+        <form>
+          <textarea onChange={(e) => handleChange(e)} value={text}></textarea>
+          <div className='btns'>
+            <button onClick={(e) => moveBack(e)}>Cancel</button>
+            <button type='submit'>Done</button>
+          </div>
+        </form>
       </div>
       <style jsx>{`
         .container {
@@ -40,7 +51,7 @@ export default function Description({TodoList}) {
           padding: 16px 32px;
           overflow: hidden
         }
-        p {
+        textarea {
           margin: 0;
           font-size: 2rem;
           height: 88%;

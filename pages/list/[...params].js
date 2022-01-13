@@ -15,6 +15,9 @@ export default function Description({TodoList}) {
     }
   }, [router])
 
+  const handleRevise = () => {
+    router.push(`/write/${item.id}`);
+  }
 
   return (
     <>
