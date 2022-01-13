@@ -14,7 +14,7 @@ export default function Container ({children}) {
           height: 90vh;
           border-radius: 10px;
           overflow: hidden;
-          background-color: #e9e9e9;
+          background-color: #ffffff;
         }
         
       `}</style>

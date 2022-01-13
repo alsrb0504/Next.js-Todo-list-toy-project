@@ -12,7 +12,7 @@ export function TodoListContainer () {
           margin: 0;
           flex: 1;
           padding: 16px;
-          background-color: white;
+          background-color: #ffffff;
           overflow: scroll;
         }
       `}</style>
