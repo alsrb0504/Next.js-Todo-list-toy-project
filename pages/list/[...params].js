@@ -21,7 +21,7 @@ export default function Description() {
         .container {
           flex: 1;
           position: relative;
-          padding: 16px;
+          padding: 16px 32px;
           overflow: hidden
         }
         p {
