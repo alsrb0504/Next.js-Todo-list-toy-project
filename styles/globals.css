@@ -6,9 +6,17 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  background-color: palevioletred;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li {
+  list-style : none;
 }
 
 * {
