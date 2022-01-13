@@ -5,23 +5,27 @@ import {BsFillPencilFill, BsFillEraserFill } from "react-icons/bs";
 export default function Description({TodoList}) {
   const router = useRouter();
 
-  const [item, setItem] = useState({id: -999, contents: 'error!'})
+  const [item, setItem] = useState({
+    id: 999,
+    contents: 'Not Found'
+  })
 
   useEffect(() => {
-    if(router && router.query.params) {
-      const passedId = Number(router.query.params);
-      const findItem = TodoList.find(el => (el.id === passedId));
-      setItem(findItem)
+    const currentId = Number(router.query.params[0]);
+    const findItem = TodoList.find(el => (el.id === currentId));
+
+    if(findItem !== undefined) {
+      setItem(findItem);
     }
-  }, [router])
+  }, [TodoList])
 
 
   return (
     <>
       <div className='container'>
-        <p>{item.contents}</p>
+        <textarea>{item.contents}</textarea>
         <div className='btns'>
-          <button onClick={() => handleRevise()}>
+          <button>
             <BsFillPencilFill />
           </button>
           <button>
