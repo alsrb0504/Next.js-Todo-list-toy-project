@@ -1,11 +1,20 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function TodoItem({item}) {
+
+  // 나중엔 todo-list.js 에서 수정해도록 변경
+  const [btnState, setBtnState] = useState(item.state);
+
+  const changeState = () => {
+    setBtnState(!btnState);
+  }
+
   return (
     <li>
-      <div className='btn-container'>
-        <button>
+      <div className='btn-container' onClick={() => changeState()}>
+        <button className={btnState ? 'active' : ""}>
           <AiFillCheckCircle />
         </button>
       </div>
@@ -34,8 +43,12 @@ export default function TodoItem({item}) {
           display: flex;
           background-color: transparent;
           border: none;
-          color: lightgreen;
           padding: 0.3rem 0.5rem;
+          color: #e9e9e9;
+          transition: color 150ms ease-in-out;
+        }
+        .active {
+          color: lightgreen;
         }
         a {
           display: -webkit-box;

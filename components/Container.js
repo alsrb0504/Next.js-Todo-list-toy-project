@@ -11,43 +11,12 @@ export default function Container () {
         <TodoItem item={{
           id: 1,
           contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+          state: true,
         }} />
         <TodoItem item={{
-          id: 1,
+          id: 2,
           contents : "iameit.ia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-
-<TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-        }} />
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+          state: false,
         }} />
       </ul>
 
