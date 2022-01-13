@@ -1,14 +1,25 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function TodoItem({item}) {
+  const router = useRouter();
+
+  const handleMove = () => {
+    router.push(`/list/${item.id}`);
+  }
+
+
+
   // 나중엔 todo-list.js 에서 수정해도록 변경
   const [btnState, setBtnState] = useState(item.state);
 
   const changeState = () => {
     setBtnState(!btnState);
   }
+
+
 
   return (
     <li>
@@ -17,11 +28,17 @@ export default function TodoItem({item}) {
           <AiFillCheckCircle />
         </button>
       </div>
-      <Link href={`/list/${item.id}`} className="link">
-        <a>{`${item.contents}`}</a>
-      </Link>
+      <div className='link-container' onClick={() => handleMove()}>
+        <Link href={`/list/${item.id}`} className="link">
+          <a>{`${item.contents}`}</a>
+        </Link>
+      </div>
 
       <style jsx>{`
+        .link-container {
+          background-color: orange;
+          flex: 1;
+        }
         li {
           background-color: white;
           border: 0;
