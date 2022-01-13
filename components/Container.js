@@ -10,7 +10,44 @@ export default function Container () {
       <ul className='todo-list'>
         <TodoItem item={{
           id: 1,
-          contents : "first item",
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "iameit.ia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+
+<TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
+        }} />
+        <TodoItem item={{
+          id: 1,
+          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
         }} />
       </ul>
 
@@ -22,13 +59,18 @@ export default function Container () {
           margin-top: 5vh;
           max-width: 760px;
           height: 90vh;
+          border-radius: 10px;
+          overflow: hidden;
+          background-color: #e9e9e9;
         }
         .todo-list {
           margin: 0;
           flex: 1;
           padding: 16px;
-
+          
           background-color: white;
+
+          overflow: scroll;
         }
       `}</style>
     </div>
