@@ -1,7 +1,6 @@
 import TodoItem from './Todo-item'
-import TodoList from '../data/todo-list'
 
-export function TodoListContainer () {
+export function TodoListContainer ({TodoList}) {
   return (
     <>
       <ul className='todo-list'>

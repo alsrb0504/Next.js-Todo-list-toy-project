@@ -3,7 +3,6 @@ export default function Container ({children}) {
   return (
     <div className='layout'>
       {children}
-
       <style jsx>{`
         .layout{
           display: flex;
