@@ -1,23 +1,14 @@
 import Header from './Header';
 import TodoItem from './Todo-item';
+import TodoList from '../data/todo-list';
 
 export default function Container () {
-
   return (
     <div className='container'>
       <Header />
 
       <ul className='todo-list'>
-        <TodoItem item={{
-          id: 1,
-          contents : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia! consectetur adipisicing elit. Quae, officia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-          state: true,
-        }} />
-        <TodoItem item={{
-          id: 2,
-          contents : "iameit.ia! olor sit amet consectetur adipisicing elit. Quae, officia!",
-          state: false,
-        }} />
+        {TodoList.map((item) => <TodoItem key={item.id} item={item} />)}
       </ul>
 
       <style jsx>{`

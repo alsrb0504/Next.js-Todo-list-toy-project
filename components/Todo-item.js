@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function TodoItem({item}) {
-
   // 나중엔 todo-list.js 에서 수정해도록 변경
   const [btnState, setBtnState] = useState(item.state);
 
