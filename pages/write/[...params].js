@@ -31,16 +31,20 @@ export default function Description({TodoList}) {
       contents: text,
     }
     // listItem 설정하는 방법 구현.
+
+    console.log(newItem);
+
+    router.push(`/list/${router.query.params}`);
   }
 
   return (
     <>
       <div className='container'>
-        <form>
-          <textarea onChange={(e) => handleChange(e)} value={text}></textarea>
+        <form onSubmit={handleSubmit}>
+          <textarea name="contents" onChange={(e) => handleChange(e)} value={text}></textarea>
           <div className='btns'>
             <button onClick={(e) => moveBack(e)}>Cancel</button>
-            <button type='submit'>Done</button>
+            <input type="submit" value="Done" />
           </div>
         </form>
       </div>
@@ -63,7 +67,8 @@ export default function Description({TodoList}) {
           bottom: 20px;
           right: 30px;
         }
-        button {
+        button,
+        input {
           font-size: 1.6rem;
           padding: 0.5rem 2rem;
           margin-left: 1rem;
