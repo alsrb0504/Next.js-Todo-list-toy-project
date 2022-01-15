@@ -37,7 +37,7 @@ const reducer = (state = initState, action) => {
     case ADD_TODO :
       return [...state, action.payload];;
     case DELETE_TODO :
-      newState = state.filter((todo) => (todo.id !== action.payload.id));
+      newState = state.filter((todo) => (todo.id !== action.id));
       return newState;
     case EDIT_TODO :
       // 나중에 기존에 있던거 수정하는 또는

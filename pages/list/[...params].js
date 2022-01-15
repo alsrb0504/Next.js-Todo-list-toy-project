@@ -26,7 +26,7 @@ export default function Description({TodoList}) {
 
     dispatch({
       type: "DELETE_TODO",
-      payload: item,
+      id: item.id,
     })
 
     router.push('/');
