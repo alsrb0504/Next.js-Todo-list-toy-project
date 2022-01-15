@@ -1,21 +1,25 @@
+import Link from 'next/link'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import TodoItem from './Todo-item'
 
 export function TodoListContainer ({TodoList}) {
+  const handleAdd = () => {
+
+  }
+
   return (
     <>
       <ul className='todo-list'>
           {TodoList.map((item) => <TodoItem key={item.id} item={item} />)}
       </ul>
-      <button>
-        <AiFillPlusCircle />
-      </button>
+      <Link href='/write/add'>
+        <button onClick={handleAdd}>
+          <AiFillPlusCircle />
+        </button>
+      </Link>
       <style jsx>{`
         .todo-list {
           margin: 0;
-
-          // flex: 1;
-          
           padding: 16px;
           background-color: #ffffff;
           overflow: scroll;

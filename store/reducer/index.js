@@ -35,7 +35,12 @@ const reducer = (state = initState, action) => {
     case SHOW_TODOS :
       return [...state];
     case ADD_TODO :
-      return [...state, action.payload];;
+      newState = {
+        id: state.length + 1,
+        contents: action.text,
+        state: false,
+      }
+      return [...state, newState];
     case DELETE_TODO :
       newState = state.filter((todo) => (todo.id !== action.id));
       return newState;
