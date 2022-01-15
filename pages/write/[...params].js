@@ -6,6 +6,7 @@ export default function Description() {
   const router = useRouter();
   const dispatch = useDispatch();
   const TodoList = useSelector((state) => state);
+
   const [text, setText] = useState('Empty! error')
 
   useEffect(() => {
@@ -60,12 +61,23 @@ export default function Description() {
           overflow: hidden
         }
         textarea {
-          margin: 0;
-          font-size: 2rem;
-          height: 88%;
+          margin-top: 1rem;
           overflow:scroll;
+          min-height: 350px;
+          display: inline-block;
+          padding: 1rem;
+          width: 100%;
+          border: 3px solid lightgreen;
+          border-radius: 10px;
+          font-size: 2rem;
+          outline: none;
         }
-
+        textarea::placeholder {
+          font-size: 2rem;
+        }
+        textarea:focus {
+          border: 4px solid lightgreen;
+        }
         .btns {
           position: absolute;
           bottom: 20px;
