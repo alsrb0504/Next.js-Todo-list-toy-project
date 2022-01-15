@@ -26,8 +26,6 @@ export default function Description() {
   }
 
   const handleRemove = () => {
-    console.log('remove');
-
     dispatch({
       type: "DELETE_TODO",
       id: item.id,
