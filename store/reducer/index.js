@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, SHOW_TODOS } from '../constants/ActionType';
+import { ADD_TODO, CHANGE_STATE, DELETE_TODO, EDIT_TODO, SHOW_TODOS } from '../constants/ActionType';
 
 const initState = [
   {
@@ -52,6 +52,14 @@ const reducer = (state = initState, action) => {
         return todo;
       });
       return [...newState,];
+    case CHANGE_STATE :
+      newState = state.map((todo) => {
+        if(todo.id === action.id) {
+          return {...todo, state: !todo.state}
+        }
+        return todo;
+      });
+      return [...newState];
     default:
       return state;
   }

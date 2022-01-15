@@ -2,9 +2,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { AiFillCheckCircle } from "react-icons/ai";
+import { useDispatch } from 'react-redux';
 
 export default function TodoItem({item}) {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleMove = () => {
     router.push(`/list/${item.id}`);
@@ -14,6 +16,11 @@ export default function TodoItem({item}) {
 
   const changeState = () => {
     setBtnState(!btnState);
+
+    dispatch({
+      type: "CHANGE_STATE",
+      id: item.id,
+    })
   }
 
   return (
