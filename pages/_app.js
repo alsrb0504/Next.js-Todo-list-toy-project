@@ -1,20 +1,15 @@
-// import { useState } from 'react';
+import Seo from '../components/Seo';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
+import wrapper from '../store/configureStore';
 import '../styles/globals.css';
 
-// import TodoListState from '../data/todo-list';
-import wrapper from '../store/configureStore';
-
 function MyApp({ Component, pageProps }) {
-
-  // const [TodoList, setTodoList] = useState(TodoListState)
-
   return (
     <>
+      <Seo />
       <Layout>
         <Header />
-        {/* <Component TodoList={TodoList} {...pageProps} /> */}
         <Component {...pageProps} />
       </Layout>
     </>
