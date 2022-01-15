@@ -9,7 +9,6 @@ export function TodoListContainer ({TodoList}) {
       <style jsx>{`
         .todo-list {
           margin: 0;
-          flex: 1;
           padding: 16px;
           background-color: #ffffff;
           overflow: scroll;

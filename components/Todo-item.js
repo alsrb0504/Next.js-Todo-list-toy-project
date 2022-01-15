@@ -10,7 +10,6 @@ export default function TodoItem({item}) {
     router.push(`/list/${item.id}`);
   }
 
-  // 나중엔 todo-list.js 에서 수정해도록 변경
   const [btnState, setBtnState] = useState(item.state);
 
   const changeState = () => {

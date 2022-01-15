@@ -1,13 +1,17 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import {BsFillPencilFill, BsFillEraserFill } from "react-icons/bs";
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-export default function Description({TodoList}) {
+export default function Description() {
   const router = useRouter();
   const dispatch = useDispatch();
 
+  const TodoList = useSelector((state) => state);
+
   const [item, setItem] = useState({id: -999, contents: 'error!'})
+
 
   useEffect(() => {
     if(router && router.query.params) {

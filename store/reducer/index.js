@@ -40,10 +40,13 @@ const reducer = (state = initState, action) => {
       newState = state.filter((todo) => (todo.id !== action.id));
       return newState;
     case EDIT_TODO :
-      // 나중에 기존에 있던거 수정하는 또는
-      // 제거하고 새로 추가하고 id 별로 정렬하는 걸로 구현.
-      newState = [...state];
-      return newState;
+      newState = state.map((todo) => {
+        if(todo.id === action.payload.id) {
+          return {...todo, contents: action.payload.contents}
+        }
+        return todo;
+      });
+      return [...newState,];
     default:
       return state;
   }

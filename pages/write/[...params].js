@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-export default function Description({TodoList}) {
+export default function Description() {
   const router = useRouter();
   const dispatch = useDispatch();
-
+  const TodoList = useSelector((state) => state);
   const [text, setText] = useState('Empty! error')
 
   useEffect(() => {
@@ -28,16 +28,15 @@ export default function Description({TodoList}) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
-
-    // 나중에 새로 만들기는 page id = 0으로 설정.
     const newItem = {
-      id: router.query.params,
+      id: Number(router.query.params),
       contents: text,
     }
-    // listItem 설정하는 방법 구현.
 
-    console.log(newItem);
+    dispatch({
+      type: "EDIT_TODO",
+      payload: newItem,
+    })
 
     router.push(`/list/${router.query.params}`);
   }
