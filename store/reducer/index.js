@@ -36,7 +36,7 @@ const reducer = (state = initState, action) => {
       return [...state];
     case ADD_TODO :
       newState = {
-        id: state.length + 1,
+        id: state.length + Math.floor(Math.random() * 1000),
         contents: action.text,
         state: false,
       }
