@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import Header from '../components/Header'
-import Layout from '../components/Layout'
-import '../styles/globals.css'
+import { useState } from 'react';
+import Header from '../components/Header';
+import Layout from '../components/Layout';
+import '../styles/globals.css';
 
-import TodoListState from '../data/todo-list'
+import TodoListState from '../data/todo-list';
+import wrapper from '../store/configureStore';
 
 function MyApp({ Component, pageProps }) {
 
@@ -19,4 +20,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);
