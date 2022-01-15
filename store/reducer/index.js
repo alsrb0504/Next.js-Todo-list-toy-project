@@ -3,27 +3,27 @@ import { ADD_TODO, CHANGE_STATE, DELETE_TODO, EDIT_TODO, SHOW_TODOS } from '../c
 const initState = [
   {
     id: 1,
-    contents : "layout home",
+    contents : "make pages and design layout",
     state: true,
   },
   {
     id: 2,
-    contents : "connect todo-list state",
-    state: false,
+    contents : "connect todo-list redux",
+    state: true,
   },
   {
     id: 3,
-    contents : "revise _app.js structure",
-    state: false,
+    contents : "make add, edit, remove funcs",
+    state: true,
   },
   {
     id: 4,
-    contents : "design todo pages",
-    state: false,
+    contents : "revise and remove not used code",
+    state: true,
   },
   {
     id: 5,
-    contents : "revise and remove not used code",
+    contents : "upload github",
     state: false,
   },
 ]
