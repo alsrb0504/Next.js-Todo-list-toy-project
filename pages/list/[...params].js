@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import {BsFillPencilFill, BsFillEraserFill } from "react-icons/bs";
+import { useDispatch } from 'react-redux';
 
 export default function Description({TodoList}) {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [item, setItem] = useState({id: -999, contents: 'error!'})
 
@@ -19,15 +21,26 @@ export default function Description({TodoList}) {
     router.push(`/write/${item.id}`);
   }
 
+  const handleRemove = () => {
+    console.log('remove');
+
+    dispatch({
+      type: "DELETE_TODO",
+      payload: item,
+    })
+
+    router.push('/');
+  }
+
   return (
     <>
       <div className='container'>
         <p>{item.contents}</p>
         <div className='btns'>
-          <button onClick={() => handleRevise()}>
+          <button onClick={handleRevise}>
             <BsFillPencilFill />
           </button>
-          <button>
+          <button onClick={handleRemove}>
             <BsFillEraserFill />
           </button>
         </div>

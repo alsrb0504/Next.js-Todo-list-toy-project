@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 export default function Description({TodoList}) {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [text, setText] = useState('Empty! error')
 
@@ -25,6 +27,9 @@ export default function Description({TodoList}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+
+
     // 나중에 새로 만들기는 page id = 0으로 설정.
     const newItem = {
       id: router.query.params,

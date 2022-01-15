@@ -15,6 +15,9 @@ export const add_todo = (todo) => {
 }
 
 export const delete_todo = (todo) => {
+
+  console.log(todo);
+
   return {
     type: DELETE_TODO,
     payload: todo,
